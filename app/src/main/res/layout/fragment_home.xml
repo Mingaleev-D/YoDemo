@@ -17,12 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:progressBackgroundTint="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"
             app:layout_constraintVertical_bias="0.371" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,9 +70,9 @@
                         android:id="@+id/title_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/arlrdbd"
                         android:text="YoDemo"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/arlrdbd"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -146,9 +146,9 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="10dp"
+                                        android:fontFamily="@font/arial_rounded_mt_regular"
                                         android:text="Explore"
                                         android:textStyle="bold"
-                                        android:fontFamily="@font/arial_rounded_mt_regular"
                                         app:chipCornerRadius="4dp"
                                         app:chipIcon="@drawable/baseline_explore_24"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -178,8 +178,8 @@
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
                                             android:text="All"
-                                            android:textStyle="bold"
                                             android:textColor="@color/white"
+                                            android:textStyle="bold"
                                             app:chipBackgroundColor="@color/dark_gray" />
 
                                         <com.google.android.material.chip.Chip
@@ -300,15 +300,17 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.appbar.AppBarLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_rv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:listitem="@layout/item_video"
-            app:layout_constraintTop_toBottomOf="@id/home_scrollview"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_scrollview"
+            tools:listitem="@layout/item_video" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

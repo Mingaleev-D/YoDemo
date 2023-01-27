@@ -27,8 +27,11 @@ class HomeViewModel @Inject constructor(
 
    private val _popularVideos: MutableLiveData<NetworkResource<YoutubeListResposeDto>> = MutableLiveData()
    val popularVideos: LiveData<NetworkResource<YoutubeListResposeDto>> get() = _popularVideos
+   init {
+      fetchPopularVideos()
+   }
 
-  private fun fetchPopularVideos() = viewModelScope.launch {
+   private fun fetchPopularVideos() = viewModelScope.launch {
       _popularVideos.value = NetworkResource.Loading()
 
       if (isOnline(app)) {
